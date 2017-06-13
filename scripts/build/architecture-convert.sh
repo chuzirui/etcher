@@ -76,6 +76,12 @@ elif [ "$ARGV_TYPE" == "redhat" ]; then
   elif [ "$ARGV_ARCHITECTURE" == "x64" ]; then
     RESULT='x86_64'
   fi
+elif [ "$ARGV_TYPE" == "appimage" ]; then
+  if [ "$ARGV_ARCHITECTURE" == "x86" ]; then
+    RESULT=i386
+  elif [ "$ARGV_ARCHITECTURE" == "x64" ]; then
+    RESULT='x86_64'
+  fi
 else
   echo "Unsupported architecture type: $ARGV_TYPE" 1>&2
   exit 1
